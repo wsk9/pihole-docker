@@ -7,8 +7,6 @@ services:
         ipv4_address: 172.21.3.11 # update as preferred
       pihole:
         ipv4_address: 192.168.1.11 # update as preferred and following router ip address, e.g. 192.168.1.25
-      wg-easy:
-        ipv4_address: 10.8.2.11 # update as preferred
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -28,8 +26,6 @@ services:
     networks:
       default:
         ipv4_address: 172.21.3.21 # update as preferred
-      wg-easy:
-        ipv4_address: 10.8.2.21 # update as preferred
     ports:
       - '80:80'
       - '127.0.0.1:81:81'
@@ -53,8 +49,8 @@ services:
     volumes:
       - ./wg-easy/etc_wireguard:/etc/wireguard
     networks:
-      wg-easy:
-        ipv4_address: 10.8.2.31 # update as preferred
+      default:
+        ipv4_address: 172.21.3.31 # update as preferred
     ports:
       - "51820:51820/udp"
       - "127.0.0.1:51821:51821/tcp"
@@ -94,8 +90,3 @@ networks:
       config:
         - subnet: 192.168.1.0/24 # update following your router IP address
           gateway: 192.168.1.1 # use your router IP address
-  wg-easy:
-    name: wg-easy
-    ipam:
-      config:
-        - subnet: 10.8.2.0/24
