@@ -28,7 +28,8 @@ services:
         ipv4_address: 172.21.3.21 # update as preferred
     ports:
       - '80:80'
-      - '127.0.0.1:81:81'
+      - '81:81'
+      #- '127.0.0.1:81:81' # To make the administrator page accessible only through subdomain, restart the container using this after completing setting up Nginx Proxy Manager
       - '443:443' 
     volumes:
       - ./nginx/data:/data
@@ -53,7 +54,8 @@ services:
         ipv4_address: 172.21.3.31 # update as preferred
     ports:
       - "51820:51820/udp"
-      - "127.0.0.1:51821:51821/tcp"
+      - "51821:51821/tcp"
+      #- '127.0.0.1:51821:51821/tcp' # To make the administrator page accessible only through subdomain, restart the container using this after completing setting up Nginx Proxy Manager
     environment:
       - LANG=en
       - WG_HOST= [YOUR DOMAIN] # use your domain or get a subdomain from a DDNS service e.g. Duck DNS
