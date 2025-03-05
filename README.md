@@ -7,7 +7,7 @@ A simple docker-compose file for Pi-Hole + Nginx Proxy Manager + Wireguard (with
 - wg-easy https://github.com/wg-easy/wg-easy
 
 ## What is this for?
-A reference to prepare a base setup using Docker for a home server prior to setting up other services.
+A reference for fellow hobbyist to prepare a base setup using Docker for a home server prior to setting up other services.
 Reasons for using these containers as a base are as follows:
    - Pi-Hole provides basic adblock, with local DNS and CNAME record for setting up proxy hosts in Nginx Proxy Manager.
    - Nginx Proxy Manager allows use of subdomains instead of IP address to access to services.
@@ -27,6 +27,7 @@ For additional security, the home network is only accessible through Wireguard. 
 1. On your server, place the docker-compose file in the desired directory, e.g. in "pihole"
 2. Read through the contents and comments thoroughly, then amend docker-compose.yml according to your requirements
 3. Run the following command.
+
    docker compose up -d
 
 ### Pi-Hole
