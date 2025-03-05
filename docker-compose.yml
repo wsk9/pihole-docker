@@ -6,7 +6,7 @@ services:
       default:
         ipv4_address: 172.21.3.11 # update as preferred
       pihole:
-        ipv4_address: 192.168.1.11 # update as preferred and following router ip address, e.g. 192.168.1.25
+        ipv4_address: 192.168.1.11 # update as preferred and following router ip address, e.g. 192.168.1.25. For setting as primary DNS on router
     ports:
       - "53:53/tcp"
       - "53:53/udp"
